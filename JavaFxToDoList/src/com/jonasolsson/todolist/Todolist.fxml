@@ -12,6 +12,9 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
 
 <BorderPane fx:id="mainBorderPane" 
 fx:controller="com.jonasolsson.todolist.Controller"
@@ -23,13 +26,22 @@ fx:controller="com.jonasolsson.todolist.Controller"
 					<items>
 						<MenuItem text="New. . " onAction="#showNewItemDialog"></MenuItem>
 						<SeparatorMenuItem></SeparatorMenuItem>
-						<MenuItem text="Exit"></MenuItem>
+						<MenuItem text="Exit" onAction="#handelExit"></MenuItem>
 					</items>
 				</Menu>
 			</MenuBar>
 			<ToolBar >
 				<HBox >
-					
+					<Button text="New..." onAction="#showNewItemDialog" >
+						<tooltip>
+							<Tooltip text="New Item.."></Tooltip>	
+						</tooltip>
+					</Button>
+					<ToggleButton fx:id="filterToggleButton" text="Today" onAction="#handleFilterButton">
+						<tooltip>
+							<Tooltip text="togel"></Tooltip>
+						</tooltip>
+					</ToggleButton>
 				</HBox>
 			</ToolBar>
 		</VBox>
